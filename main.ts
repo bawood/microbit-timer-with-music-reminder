@@ -14,12 +14,14 @@ input.onButtonPressed(Button.B, function () {
     }
 })
 input.onGesture(Gesture.Shake, function () {
+    music.setVolume(199)
     while (Minutes > 0) {
         basic.showNumber(Minutes)
         music.play(music.tonePlayable(784, music.beat(BeatFraction.Whole)), music.PlaybackMode.InBackground)
         basic.pause(60000)
         Minutes += 0 - 1
     }
+    music.setVolume(255)
     music._playDefaultBackground(music.builtInPlayableMelody(Melodies.Entertainer), music.PlaybackMode.InBackground)
     basic.showIcon(IconNames.Diamond)
     basic.showIcon(IconNames.SmallDiamond)
